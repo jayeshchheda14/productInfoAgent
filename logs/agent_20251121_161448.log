@@ -1,0 +1,55 @@
+2025-11-21 16:14:48 | INFO     | ProductInfoAgent | Logging initialized: C:\GitRepo\MultiAgentPython\ProductInfoADKAgent\logs\agent_20251121_161448.log
+2025-11-21 16:15:36 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\cc_2.jpg
+2025-11-21 16:15:36 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\cc_2.jpg
+2025-11-21 16:15:36 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: cc_2.jpg, size: 1194752 bytes
+2025-11-21 16:15:38 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 16:15:38 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: cc_2.jpg
+2025-11-21 16:15:38 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 16:15:39 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 16:15:41 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 1, text: 71 chars, objects: 2
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Aluminum can: 0.99
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Drink can: 0.98
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Carbonated soft drinks: 0.97
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Cola: 0.97
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Steel and tin cans: 0.97
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Tin: 0.96
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Soft drink: 0.95
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Coca-Cola: 0.93
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Liquid: 0.92
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Non-alcoholic drink: 0.89
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - The Coca-Cola Company: 0.95
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Coca-Cola
+Trade mark (A)
+Trade mark
+PHOSPH
+FLAVO
+CANNEDU
+THE
+THE CO
+COM
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Canned packaged goods: 0.61
+2025-11-21 16:15:41 | DEBUG    | ProductInfoAgent |   - Drink: 0.58
+2025-11-21 16:15:42 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 1, text length: 71
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Aluminum can', 'Drink can', 'Carbonated soft drinks']
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['The Coca-Cola Company']
+2025-11-21 16:15:42 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 4186px, Mode: RGB
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 4186px >= 200px (Total: 20)
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x4186 > 500x500 (Total: 35)
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x4186 (Total: 50)
+2025-11-21 16:15:42 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-21 16:15:42 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-21 16:15:42 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-21 16:15:42 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.9906269907951355, 'reason': 'Product detected: Aluminum can', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-21 16:15:43 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-21 16:15:43 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 10, logos: 1
+2025-11-21 16:15:49 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Coca-Cola, product: Coca-Cola
+2025-11-21 16:15:49 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Enjoy the refreshing, classic taste of Coca-Cola, a trademarked and phosphorated flavored drink for ...

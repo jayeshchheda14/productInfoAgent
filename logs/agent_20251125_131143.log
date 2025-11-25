@@ -1,0 +1,67 @@
+2025-11-25 13:11:43 | INFO     | ProductInfoAgent | Logging initialized: C:\GitRepo\MultiAgentPython\ProductInfoADKAgent\logs\agent_20251125_131143.log
+2025-11-25 13:12:13 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\abc.jpg
+2025-11-25 13:12:13 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\abc.jpg
+2025-11-25 13:12:30 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\sdfs.jpg
+2025-11-25 13:12:30 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\sdfs.jpg
+2025-11-25 13:12:30 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: sdfs.jpg, size: 757120 bytes
+2025-11-25 13:12:32 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-25 13:12:32 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: sdfs.jpg
+2025-11-25 13:12:32 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Using Docker ClamAV
+2025-11-25 13:12:47 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Docker Result - clean: True
+2025-11-25 13:12:48 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 13:12:48 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: sdfs.jpg
+2025-11-25 13:12:50 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/sdfs.jpg
+2025-11-25 13:12:52 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 13:12:54 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 8, logos: 2, text: 154 chars, objects: 1
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Food: 0.91
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.83
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Packaging and labeling: 0.82
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Junk food: 0.72
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Toy: 0.72
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Produce: 0.60
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Convenience food: 0.51
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Finger food: 0.50
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Kellogg's: 0.95
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Kellogg's: 0.92
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+ENLARGED TO
+SHOW TEXTURE
+JUMBO SIZE - PERFECT FOR SNACKING!
+.
+Kellogg's
+TIGER
+PAWES
+TM
+CEREAL
+JUMBO SNAX
+NET WT
+10Z (289) O
+TONY
+TM
+110
+CALORIES
+PER POUCH
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 13:12:54 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.78
+2025-11-25 13:12:55 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 8, logos: 2, text length: 154
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Ingredient', 'Packaging and labeling']
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ["Kellogg's", "Kellogg's"]
+2025-11-25 13:12:55 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 13:12:55 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 13:12:55 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 13:12:55 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 13:12:55 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.913188099861145, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 13:12:57 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 13:12:57 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 8, logos: 2
+2025-11-25 13:13:03 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Kellogg's, product: Tiger Paws Jumbo Snax Cereal
+2025-11-25 13:13:03 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Kellogg's Tiger Paws Jumbo Snax Cereal are jumbo-sized and perfect for snacking!  Enjoy the iconic t...

@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/23752637/README.md)
 # Product Info Agent
 
 This agent functions as an automated product image analysis system designed to validate, scan, and generate marketing content for product images. Its primary role is to ensure that product images meet quality, security, and ecommerce eligibility standards through a comprehensive validation pipeline.
@@ -43,16 +42,17 @@ The key features of the Product Info ADK Agent include:
 
    ```bash
    # Clone this repository
-   cd MultiAgentPython/productInfoAgent
-   
+   cd MultiAgentPython/ProductInfoADKAgent
+   # check if you have python installer
+   py --version
    # Install dependencies
-   pip install -r requirements.txt
+   py -m pip install -r requirements.txt
    ```
 
 3. **Configuration**
 
    * Create a `.env` file with the following:
-
+    # Below is setup for Windows. Adjust paths for macOS/Linux as needed.
      ```env
      GOOGLE_API_KEY=your_gemini_api_key_here
      GCP_BUCKET_NAME=your-bucket-name
@@ -92,7 +92,7 @@ ADK provides convenient ways to interact with the agent locally. Example request
 Run the agent using CLI:
 
 ```bash
-adk run .\productInfoAgent\
+adk run .\ProductInfoADKAgent\
 ```
 
 **Using Python Scripts**
@@ -228,7 +228,7 @@ Edit `policy.json` to customize scoring rules:
 
 The agent includes comprehensive logging for debugging:
 
-* Logs saved to `productInfoAgent/logs/agent_YYYYMMDD_HHMMSS.log`
+* Logs saved to `ProductInfoADKAgent/logs/agent_YYYYMMDD_HHMMSS.log`
 * `logs/latest.log` points to most recent log
 * Logs include:
   - **Image Loading**: File path, size, success/failure
@@ -266,10 +266,10 @@ The agent includes comprehensive logging for debugging:
 View logs:
 ```bash
 # Latest log
-type productInfoAgent\logs\latest.log
+type ProductInfoADKAgent\logs\latest.log
 
 # Tail logs in real-time
-tail -f productInfoAgent\logs\latest.log
+tail -f ProductInfoADKAgent\logs\latest.log
 ```
 
 ## Customization

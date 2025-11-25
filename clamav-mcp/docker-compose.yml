@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  clamav-mcp:
+    build: .
+    container_name: clamav-mcp-server
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "clamscan", "--version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,0 +1,518 @@
+2025-11-25 15:27:33 | INFO     | ProductInfoAgent | Logging initialized: C:\GitRepo\MultiAgentPython\ProductInfoADKAgent\logs\agent_20251125_152733.log
+2025-11-25 15:29:06 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\asdf.jpg
+2025-11-25 15:29:06 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\asdf.jpg
+2025-11-25 15:29:26 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image
+2025-11-25 15:29:26 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image
+2025-11-25 15:29:26 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 00038000202766_H1L1 (1).jpg, size: 951288 bytes
+2025-11-25 15:29:27 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:29:27 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:29:27 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:29:29 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:29:29 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:29:30 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/00038000202766_H1L1 (1).jpg
+2025-11-25 15:29:32 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:29:33 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 2, logos: 1, text: 464 chars, objects: 3
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Food: 0.72
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Finger food: 0.56
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Pop-Tarts: 0.90
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Hosted Sitandermicious
+Donstrations
+Pinteinas
+Gigantices on canvase
+Yamato paración Rosa 2880
+Cantified por racin
+Cabrias
+Carbonicato Tidally 89
+18%
+Valor Diaris
+pop.
+tarts
+crisps
+frosted
+OO STRAWBERRYLICIOUS
+OO
+Pop.
+UD
+tarts
+crisps
+frosted STRAWBERRYLICIOUS
+NATURALLY AND ARTIFICIALLY FLAVORED
+8x
+12
+CRISPS
+NOT FOR
+THE
+TOASTER
+110
+CALORIES
+PER POUCH
+END FEARE SUDVEDL PILL FALLE
+FALER FERR
+Dentzundo go Kalong Sales A
+Battle Creek, MI A16/150
+NET WT 0.98 OZ (28g)
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.71
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Boxed packaged goods: 0.57
+2025-11-25 15:29:33 | DEBUG    | ProductInfoAgent |   - Food: 0.56
+2025-11-25 15:29:35 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 2, logos: 1, text length: 464
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Finger food']
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['Pop-Tarts']
+2025-11-25 15:29:35 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 15:29:35 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:29:35 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:29:35 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:29:35 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.7202914953231812, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:29:36 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:29:36 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 2, logos: 1
+2025-11-25 15:29:42 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Pop-Tarts, product: Crisps Frosted Strawberrylicious
+2025-11-25 15:29:42 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Pop-Tarts Crisps Frosted Strawberrylicious are a delightfully crispy, naturally and artificially fla...
+2025-11-25 15:30:18 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\sdfs.jpg
+2025-11-25 15:30:18 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\sdfs.jpg
+2025-11-25 15:30:18 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: sdfs.jpg, size: 757120 bytes
+2025-11-25 15:30:20 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:30:20 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: sdfs.jpg
+2025-11-25 15:30:20 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:30:21 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:30:21 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: sdfs.jpg
+2025-11-25 15:30:23 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/sdfs.jpg
+2025-11-25 15:30:24 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:30:25 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 8, logos: 2, text: 154 chars, objects: 1
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Food: 0.91
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.83
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Packaging and labeling: 0.82
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Junk food: 0.72
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Toy: 0.72
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Produce: 0.60
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Convenience food: 0.51
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Finger food: 0.50
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Kellogg's: 0.95
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Kellogg's: 0.92
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+ENLARGED TO
+SHOW TEXTURE
+JUMBO SIZE - PERFECT FOR SNACKING!
+.
+Kellogg's
+TIGER
+PAWES
+TM
+CEREAL
+JUMBO SNAX
+NET WT
+10Z (289) O
+TONY
+TM
+110
+CALORIES
+PER POUCH
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:30:25 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.78
+2025-11-25 15:30:26 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 8, logos: 2, text length: 154
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Ingredient', 'Packaging and labeling']
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ["Kellogg's", "Kellogg's"]
+2025-11-25 15:30:26 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 15:30:26 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:30:26 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:30:26 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:30:26 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.913188099861145, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:30:27 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:30:27 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 8, logos: 2
+2025-11-25 15:30:34 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Kellogg's, product: Tiger Paws Jumbo Snax Cereal
+2025-11-25 15:30:34 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Kellogg's Tiger Paws Jumbo Snax Cereal are perfectly sized for satisfying snacking! Enjoy the fun ti...
+2025-11-25 15:31:09 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image:\20064144322873_C1C1_10064871.jpg
+2025-11-25 15:31:09 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image:\20064144322873_C1C1_10064871.jpg
+2025-11-25 15:31:23 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image
+2025-11-25 15:31:23 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image
+2025-11-25 15:31:23 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 00038000202766_H1L1 (1).jpg, size: 951288 bytes
+2025-11-25 15:31:25 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:31:25 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:31:25 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:31:26 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:31:26 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:31:28 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/00038000202766_H1L1 (1).jpg
+2025-11-25 15:31:29 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:31:30 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 2, logos: 1, text: 464 chars, objects: 3
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Food: 0.72
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Finger food: 0.56
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Pop-Tarts: 0.90
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Hosted Sitandermicious
+Donstrations
+Pinteinas
+Gigantices on canvase
+Yamato paración Rosa 2880
+Cantified por racin
+Cabrias
+Carbonicato Tidally 89
+18%
+Valor Diaris
+pop.
+tarts
+crisps
+frosted
+OO STRAWBERRYLICIOUS
+OO
+Pop.
+UD
+tarts
+crisps
+frosted STRAWBERRYLICIOUS
+NATURALLY AND ARTIFICIALLY FLAVORED
+8x
+12
+CRISPS
+NOT FOR
+THE
+TOASTER
+110
+CALORIES
+PER POUCH
+END FEARE SUDVEDL PILL FALLE
+FALER FERR
+Dentzundo go Kalong Sales A
+Battle Creek, MI A16/150
+NET WT 0.98 OZ (28g)
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.71
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Boxed packaged goods: 0.57
+2025-11-25 15:31:30 | DEBUG    | ProductInfoAgent |   - Food: 0.56
+2025-11-25 15:31:32 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 2, logos: 1, text length: 464
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Finger food']
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['Pop-Tarts']
+2025-11-25 15:31:32 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 15:31:32 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:31:32 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:31:32 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:31:32 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.7202914953231812, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:31:33 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:31:33 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 2, logos: 1
+2025-11-25 15:31:39 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Pop-Tarts, product: Frosted Strawberrylicious Crisps
+2025-11-25 15:31:39 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Pop-Tarts Frosted Strawberrylicious Crisps are the perfect naturally and artificially flavored treat...
+2025-11-25 15:32:01 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image
+2025-11-25 15:32:01 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image
+2025-11-25 15:32:01 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 00038000202766_H1L1 (1).jpg, size: 951288 bytes
+2025-11-25 15:32:03 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:32:03 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:03 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:32:04 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:32:04 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:06 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:07 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:32:08 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 2, logos: 1, text: 464 chars, objects: 3
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Food: 0.72
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Finger food: 0.56
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Pop-Tarts: 0.90
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Hosted Sitandermicious
+Donstrations
+Pinteinas
+Gigantices on canvase
+Yamato paración Rosa 2880
+Cantified por racin
+Cabrias
+Carbonicato Tidally 89
+18%
+Valor Diaris
+pop.
+tarts
+crisps
+frosted
+OO STRAWBERRYLICIOUS
+OO
+Pop.
+UD
+tarts
+crisps
+frosted STRAWBERRYLICIOUS
+NATURALLY AND ARTIFICIALLY FLAVORED
+8x
+12
+CRISPS
+NOT FOR
+THE
+TOASTER
+110
+CALORIES
+PER POUCH
+END FEARE SUDVEDL PILL FALLE
+FALER FERR
+Dentzundo go Kalong Sales A
+Battle Creek, MI A16/150
+NET WT 0.98 OZ (28g)
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.71
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Boxed packaged goods: 0.57
+2025-11-25 15:32:08 | DEBUG    | ProductInfoAgent |   - Food: 0.56
+2025-11-25 15:32:10 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 2, logos: 1, text length: 464
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Finger food']
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['Pop-Tarts']
+2025-11-25 15:32:10 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 15:32:10 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:32:10 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:32:10 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:32:10 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.7202914953231812, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:32:11 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:32:11 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 2, logos: 1
+2025-11-25 15:32:18 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Pop-Tarts, product: Frosted Strawberrylicious Crisps
+2025-11-25 15:32:18 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Pop-Tarts Frosted Strawberrylicious Crisps are a delicious, naturally and artificially flavored snac...
+2025-11-25 15:32:29 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image
+2025-11-25 15:32:29 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image
+2025-11-25 15:32:29 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 00038000202766_H1L1 (1).jpg, size: 951288 bytes
+2025-11-25 15:32:31 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:32:31 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:31 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:32:32 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:32:32 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: 00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:34 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/00038000202766_H1L1 (1).jpg
+2025-11-25 15:32:35 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:32:37 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 2, logos: 1, text: 464 chars, objects: 3
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Food: 0.72
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Finger food: 0.56
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Pop-Tarts: 0.90
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Hosted Sitandermicious
+Donstrations
+Pinteinas
+Gigantices on canvase
+Yamato paración Rosa 2880
+Cantified por racin
+Cabrias
+Carbonicato Tidally 89
+18%
+Valor Diaris
+pop.
+tarts
+crisps
+frosted
+OO STRAWBERRYLICIOUS
+OO
+Pop.
+UD
+tarts
+crisps
+frosted STRAWBERRYLICIOUS
+NATURALLY AND ARTIFICIALLY FLAVORED
+8x
+12
+CRISPS
+NOT FOR
+THE
+TOASTER
+110
+CALORIES
+PER POUCH
+END FEARE SUDVEDL PILL FALLE
+FALER FERR
+Dentzundo go Kalong Sales A
+Battle Creek, MI A16/150
+NET WT 0.98 OZ (28g)
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Bagged packaged goods: 0.71
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Boxed packaged goods: 0.57
+2025-11-25 15:32:37 | DEBUG    | ProductInfoAgent |   - Food: 0.56
+2025-11-25 15:32:38 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 2, logos: 1, text length: 464
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Finger food']
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['Pop-Tarts']
+2025-11-25 15:32:38 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 3000px, Mode: RGB
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 3000px >= 200px (Total: 20)
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x3000 > 500x500 (Total: 35)
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x3000 (Total: 50)
+2025-11-25 15:32:38 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:32:38 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:32:38 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:32:38 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.7202914953231812, 'reason': 'Product detected: Food', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:32:40 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:32:40 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 2, logos: 1
+2025-11-25 15:32:46 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Pop-Tarts, product: Crisps Frosted Strawberrylicious
+2025-11-25 15:32:46 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Pop-Tarts Crisps Frosted Strawberrylicious are the perfect on-the-go snack! These bite-sized crisps ...
+2025-11-25 15:33:17 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\20064144322873_C1C1_10064871.jpg
+2025-11-25 15:33:17 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\20064144322873_C1C1_10064871.jpg
+2025-11-25 15:33:17 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 20064144322873_C1C1_10064871.jpg, size: 51984 bytes
+2025-11-25 15:33:18 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:33:18 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: 20064144322873_C1C1_10064871.jpg
+2025-11-25 15:33:18 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:33:20 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:33:20 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: 20064144322873_C1C1_10064871.jpg
+2025-11-25 15:33:21 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/20064144322873_C1C1_10064871.jpg
+2025-11-25 15:33:23 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:33:23 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 5, logos: 0, text: 119 chars, objects: 1
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.91
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Food: 0.83
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Condiment: 0.71
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Bottle: 0.63
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Indian cuisine: 0.52
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+EST.
+1862
+100% Natural
+NATURALLY FAT FREE
+ENTATION
+FROM CONTENT
+GULDEN'S
+SPICY BROWN MUSTARD
+NET WT 240Z (1LB 802) 680g
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 15:33:23 | DEBUG    | ProductInfoAgent |   - Bottle: 0.57
+2025-11-25 15:33:25 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 5, logos: 0, text length: 119
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Ingredient', 'Food', 'Condiment']
+2025-11-25 15:33:25 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 314px, Height: 613px, Mode: RGB
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 314px >= 200px (Total: 10)
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 613px >= 200px (Total: 20)
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] +0 points: Not high resolution 314x613 (Total: 20)
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 30)
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 314x613 (Total: 35)
+2025-11-25 15:33:25 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 35/50 (capped at 50)
+2025-11-25 15:33:25 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 35/45, Passed: False
+2025-11-25 15:33:25 | INFO     | ProductInfoAgent | [SCORING] Result - score: 35/50, gatekeeper: False
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': False, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 15:33:25 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.830569326877594, 'reason': 'Product detected: Food', 'has_brand_logos': False, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 15:33:26 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 15:33:26 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 5, logos: 0
+2025-11-25 15:33:33 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Gulden's, product: Spicy Brown Mustard
+2025-11-25 15:33:33 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Enjoy the naturally bold flavor of Gulden's Spicy Brown Mustard, crafted with 100% natural ingredien...
+2025-11-25 15:36:10 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\landscape_image.jpg
+2025-11-25 15:36:10 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\landscape_image.jpg
+2025-11-25 15:36:10 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: landscape_image.jpg, size: 2918040 bytes
+2025-11-25 15:36:12 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 15:36:12 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: landscape_image.jpg
+2025-11-25 15:36:12 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 15:36:14 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 15:36:14 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: landscape_image.jpg
+2025-11-25 15:36:16 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/landscape_image.jpg
+2025-11-25 15:36:18 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 15:36:21 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 0, text: 0 chars, objects: 0
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Blue: 0.99
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Mountain: 0.99
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Water: 0.99
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Mountainous landforms: 0.99
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Body of water: 0.98
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Water resources: 0.98
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Nature: 0.97
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Natural landscape: 0.97
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Mountain range: 0.97
+2025-11-25 15:36:21 | DEBUG    | ProductInfoAgent |   - Glacial landform: 0.95
+2025-11-25 15:36:23 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 0, text length: 0
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Blue', 'Mountain', 'Water']
+2025-11-25 15:36:23 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 6000px, Height: 4000px, Mode: RGB
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 6000px >= 200px (Total: 10)
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 4000px >= 200px (Total: 20)
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 6000x4000 > 500x500 (Total: 35)
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 6000x4000 (Total: 50)
+2025-11-25 15:36:23 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 15:36:23 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 15:36:23 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: False
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': False, 'min_confidence_met': False}
+2025-11-25 15:36:23 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': False, 'confidence': 0.0, 'reason': 'No product detected', 'has_brand_logos': False, 'has_product_text': False, 'meets_policy_requirements': False}
+2025-11-25 16:15:36 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\cc_2.jpg
+2025-11-25 16:15:36 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\cc_2.jpg
+2025-11-25 16:15:36 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: cc_2.jpg, size: 1194752 bytes
+2025-11-25 16:15:38 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 16:15:38 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: cc_2.jpg
+2025-11-25 16:15:38 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 16:15:39 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 16:15:39 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: cc_2.jpg
+2025-11-25 16:15:43 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/cc_2.jpg
+2025-11-25 16:15:44 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 16:15:46 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 1, text: 71 chars, objects: 2
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Aluminum can: 0.99
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Drink can: 0.98
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Carbonated soft drinks: 0.97
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Cola: 0.97
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Steel and tin cans: 0.97
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Tin: 0.96
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Soft drink: 0.95
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Coca-Cola: 0.93
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Liquid: 0.92
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Non-alcoholic drink: 0.89
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - The Coca-Cola Company: 0.95
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Coca-Cola
+Trade mark (A)
+Trade mark
+PHOSPH
+FLAVO
+CANNEDU
+THE
+THE CO
+COM
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Canned packaged goods: 0.61
+2025-11-25 16:15:46 | DEBUG    | ProductInfoAgent |   - Drink: 0.58
+2025-11-25 16:15:48 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 1, text length: 71
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Aluminum can', 'Drink can', 'Carbonated soft drinks']
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['The Coca-Cola Company']
+2025-11-25 16:15:48 | INFO     | ProductInfoAgent | [SCORING] Image properties - Width: 3000px, Height: 4186px, Mode: RGB
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Policy requirements - min_width: 200px, min_height: 200px
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Width 3000px >= 200px (Total: 10)
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Height 4186px >= 200px (Total: 20)
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] +15 points: High resolution 3000x4186 > 500x500 (Total: 35)
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] +10 points: Good color mode RGB (Total: 45)
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] +5 points: Professional dimensions 3000x4186 (Total: 50)
+2025-11-25 16:15:48 | INFO     | ProductInfoAgent | [SCORING] Final score calculation: 50/50 (capped at 50)
+2025-11-25 16:15:48 | INFO     | ProductInfoAgent | [SCORING] Policy result - Score: 50/45, Passed: True
+2025-11-25 16:15:48 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-25 16:15:48 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.9906269907951355, 'reason': 'Product detected: Aluminum can', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-25 16:15:50 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-25 16:15:50 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 10, logos: 1
+2025-11-25 16:15:56 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Coca-Cola, product: Coca-Cola
+2025-11-25 16:15:56 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Enjoy the refreshing and unmistakable taste of Coca-Cola, a timeless classic with that unique PHOSPH...

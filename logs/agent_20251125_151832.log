@@ -1,0 +1,4 @@
+2025-11-25 15:18:32 | INFO     | ProductInfoAgent | Logging initialized: C:\GitRepo\MultiAgentPython\ProductInfoADKAgent\logs\agent_20251125_151832.log
+2025-11-25 15:22:56 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\sdfs.jpg
+2025-11-25 15:22:56 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\sdfs.jpg
+2025-11-25 15:22:56 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: sdfs.jpg, size: 757120 bytes

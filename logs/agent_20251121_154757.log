@@ -1,0 +1,214 @@
+2025-11-21 15:47:57 | INFO     | ProductInfoAgent | Logging initialized: C:\GitRepo\MultiAgentPython\ProductInfoADKAgent\logs\agent_20251121_154757.log
+2025-11-21 15:49:02 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\Montage Image EA.png
+2025-11-21 15:49:02 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\Montage Image EA.png
+2025-11-21 15:49:02 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: Montage Image EA.png, size: 9562068 bytes
+2025-11-21 15:49:03 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 15:49:03 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: Montage Image EA.png
+2025-11-21 15:49:03 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 15:49:04 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 15:49:10 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 9, logos: 0, text: 313 chars, objects: 0
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Food: 0.93
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.91
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Finger food: 0.74
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Junk food: 0.69
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Superfood: 0.64
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Produce: 0.59
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Packaging and labeling: 0.58
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Label: 0.51
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent |   - Chocolate: 0.51
+2025-11-21 15:49:10 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+5 POUCHES
+FIBER
+BROWNIE
+IBER One bites
+one
+Brownies
+Brownies
+ENLARGED TO
+SHOW DETAIL
+BROWNIE
+ite
+FLAVORED WITH OTHER NATURAL FLAVORS
+6g OF TOTAL 130 3,
+180mg
+9g
+PER POUCH
+5g
+FAT PER POUCH
+CALORIES
+SAT FAT ||SODIUM
+SUGARS
+FIBER
+15% DV
+7% DV
+20% DV
+CHOCOLATE CARAMEL
+OD 5-1.17 OZ (33g) POUCHES NET WT 5.85 OZ (165g)
+2025-11-21 15:49:11 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 15:49:11 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 9, logos: 0, text length: 313
+2025-11-21 15:49:11 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Food', 'Ingredient', 'Finger food']
+2025-11-21 15:49:11 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-21 15:49:11 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-21 15:49:11 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.9265143275260925, 'reason': 'Product detected: Food', 'has_brand_logos': False, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-21 15:49:12 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-21 15:49:12 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 9, logos: 0
+2025-11-21 15:49:18 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: IBER, product: One Bites Brownies Chocolate Caramel
+2025-11-21 15:49:18 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Satisfy your cravings with IBER One Bites Brownies! These delicious chocolate caramel flavored brown...
+2025-11-21 15:52:57 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\landscape_image.jpg
+2025-11-21 15:52:57 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\landscape_image.jpg
+2025-11-21 15:52:57 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: landscape_image.jpg, size: 2918040 bytes
+2025-11-21 15:52:58 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 15:52:58 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: landscape_image.jpg
+2025-11-21 15:52:58 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 15:52:59 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 15:53:02 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 0, text: 0 chars, objects: 0
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Blue: 0.99
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Mountain: 0.99
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Water: 0.99
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Mountainous landforms: 0.99
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Body of water: 0.98
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Water resources: 0.98
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Nature: 0.97
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Natural landscape: 0.97
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Mountain range: 0.97
+2025-11-21 15:53:02 | DEBUG    | ProductInfoAgent |   - Glacial landform: 0.95
+2025-11-21 15:53:03 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 15:53:03 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 0, text length: 0
+2025-11-21 15:53:03 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Blue', 'Mountain', 'Water']
+2025-11-21 15:53:03 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: False
+2025-11-21 15:53:03 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': False, 'min_confidence_met': False}
+2025-11-21 15:53:03 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': False, 'confidence': 0.0, 'reason': 'No product detected', 'has_brand_logos': False, 'has_product_text': False, 'meets_policy_requirements': False}
+2025-11-21 15:55:44 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\MW.jpg
+2025-11-21 15:55:44 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\MW.jpg
+2025-11-21 15:55:44 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: MW.jpg, size: 17688 bytes
+2025-11-21 15:55:45 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 15:55:45 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: MW.jpg
+2025-11-21 15:55:45 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 15:55:46 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 15:55:47 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 7, logos: 4, text: 17 chars, objects: 0
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Drink can: 0.81
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Logo: 0.81
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Soft drink: 0.69
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Aluminum can: 0.64
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Tin: 0.56
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Steel and tin cans: 0.56
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Advertising: 0.54
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Mountain Dew: 0.98
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Mountain Dew: 0.97
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Mountain Dew: 0.88
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent |   - Mountain Dew: 0.75
+2025-11-21 15:55:47 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+ZERO
+OUNG
+Debu
+De
+2025-11-21 15:55:48 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 15:55:48 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 7, logos: 4, text length: 17
+2025-11-21 15:55:48 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Drink can', 'Logo', 'Soft drink']
+2025-11-21 15:55:48 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['Mountain Dew', 'Mountain Dew', 'Mountain Dew', 'Mountain Dew']
+2025-11-21 15:55:48 | INFO     | ProductInfoAgent | [SCORING] Result - score: 20/50, gatekeeper: False
+2025-11-21 15:55:48 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': False, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-21 15:55:48 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.8076062798500061, 'reason': 'Product detected: Drink can', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-21 15:57:44 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\MW_2.jpg
+2025-11-21 15:57:44 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\MW_2.jpg
+2025-11-21 15:57:44 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: MW_2.jpg, size: 22448 bytes
+2025-11-21 15:57:46 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 15:57:46 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: MW_2.jpg
+2025-11-21 15:57:46 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 15:57:47 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 15:57:47 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 3, logos: 0, text: 104 chars, objects: 5
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Adventure: 0.79
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Travel: 0.75
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Advertising: 0.57
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+CROSS INTO THE
+MOUNTAIN TIME ZONE,
+GET A DEW ON US.
+ENTERING
+Mountain
+Time Zone
+WELCOME TO
+MOUNTAIN
+TIME
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Pants: 0.76
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Person: 0.76
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Jacket: 0.67
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Person: 0.65
+2025-11-21 15:57:47 | DEBUG    | ProductInfoAgent |   - Outerwear: 0.62
+2025-11-21 15:57:49 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 15:57:49 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 3, logos: 0, text length: 104
+2025-11-21 15:57:49 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Adventure', 'Travel', 'Advertising']
+2025-11-21 15:57:49 | INFO     | ProductInfoAgent | [SCORING] Result - score: 30/50, gatekeeper: False
+2025-11-21 15:57:49 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': False, 'ecommerce_eligible': False, 'min_confidence_met': False}
+2025-11-21 15:57:49 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': False, 'confidence': 0.0, 'reason': 'No product detected', 'has_brand_logos': False, 'has_product_text': True, 'meets_policy_requirements': False}
+2025-11-21 15:58:54 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\cc.jpg
+2025-11-21 15:58:54 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\cc.jpg
+2025-11-21 15:58:54 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: cc.jpg, size: 7600 bytes
+2025-11-21 15:58:55 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 15:58:55 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: cc.jpg
+2025-11-21 15:58:55 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 15:58:57 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 15:58:57 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 1, text: 9 chars, objects: 2
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Bottle: 0.99
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Cola: 0.96
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Glass bottle: 0.95
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.94
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Carbonated soft drinks: 0.94
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Liquid: 0.92
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Coca-Cola: 0.91
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Food: 0.90
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Soft drink: 0.89
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Drinkware: 0.85
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent | [VISION_API] Logos detected:
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - The Coca-Cola Company: 0.94
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Coca-Cola
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Bottle: 0.77
+2025-11-21 15:58:57 | DEBUG    | ProductInfoAgent |   - Drink: 0.58
+2025-11-21 15:58:58 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 15:58:58 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 1, text length: 9
+2025-11-21 15:58:58 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Bottle', 'Cola', 'Glass bottle']
+2025-11-21 15:58:58 | DEBUG    | ProductInfoAgent | [SCORING] Logos: ['The Coca-Cola Company']
+2025-11-21 15:58:58 | INFO     | ProductInfoAgent | [SCORING] Result - score: 20/50, gatekeeper: False
+2025-11-21 15:58:58 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': False, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-21 15:58:58 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.9930293560028076, 'reason': 'Product detected: Bottle', 'has_brand_logos': True, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-21 16:04:38 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\00049000069839_A1N1.jpg
+2025-11-21 16:04:38 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\00049000069839_A1N1.jpg
+2025-11-21 16:04:38 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: 00049000069839_A1N1.jpg, size: 640032 bytes
+2025-11-21 16:04:41 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting
+2025-11-21 16:04:41 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Scanning file: 00049000069839_A1N1.jpg
+2025-11-21 16:04:41 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Result - clean: True, method: mock
+2025-11-21 16:04:42 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-21 16:04:43 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 0, text: 143 chars, objects: 2
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Liquid: 0.92
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Bottle: 0.91
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Ingredient: 0.89
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Juice: 0.85
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Food: 0.80
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Fruit: 0.76
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Soft drink: 0.71
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Citrus: 0.61
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Health shake: 0.59
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Natural foods: 0.59
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Bottled and jarred packaged goods: 0.65
+2025-11-21 16:04:43 | DEBUG    | ProductInfoAgent |   - Bottle: 0.64
+2025-11-21 16:04:45 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-21 16:04:45 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 0, text length: 143
+2025-11-21 16:04:45 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Liquid', 'Bottle', 'Ingredient']
+2025-11-21 16:04:45 | INFO     | ProductInfoAgent | [SCORING] Result - score: 50/50, gatekeeper: True
+2025-11-21 16:04:45 | DEBUG    | ProductInfoAgent | [SCORING] Checks: {'policy_score_passed': True, 'ecommerce_eligible': True, 'min_confidence_met': True}
+2025-11-21 16:04:45 | DEBUG    | ProductInfoAgent | [SCORING] Ecommerce: {'is_sellable': True, 'confidence': 0.9132500886917114, 'reason': 'Product detected: Bottle', 'has_brand_logos': False, 'has_product_text': True, 'meets_policy_requirements': True}
+2025-11-21 16:04:46 | INFO     | ProductInfoAgent | [MARKETING] Starting content generation
+2025-11-21 16:04:46 | DEBUG    | ProductInfoAgent | [MARKETING] Input - labels: 10, logos: 0
+2025-11-21 16:04:53 | INFO     | ProductInfoAgent | [MARKETING] Success - brand: Hubert's, product: Diet Strawberry Lemonade
+2025-11-21 16:04:53 | DEBUG    | ProductInfoAgent | [MARKETING] Message: Hubert's Diet Strawberry Lemonade is naturally flavored and only 25 calories per bottle, so you can ...

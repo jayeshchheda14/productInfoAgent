@@ -1,4 +1,5 @@
 streamlit
+google-adk
 google-cloud-storage
 google-cloud-vision
 google-generativeai
