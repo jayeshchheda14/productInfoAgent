@@ -1,0 +1,82 @@
+[project]
+name = "product-info-agent"
+version = "0.1.0"
+description = "AI-powered product image analysis agent that validates, scans, and generates marketing content for product images."
+authors = [
+    {name = "Product Info Agent", email = "agent@example.com"}
+]
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "google-adk>=1.5.0",
+    "google-cloud-logging>=3.12.0",
+    "google-cloud-aiplatform[adk,agent-engines]>=1.93.0",
+    "google-cloud-storage>=2.10.0",
+    "google-cloud-vision>=3.4.0",
+    "pillow>=10.3.0",
+    "python-dotenv>=1.0.0"
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.23.8",
+    "nest-asyncio>=1.6.0",
+    "agent-starter-pack>=0.14.1",
+]
+
+[project.optional-dependencies]
+jupyter = [
+    "jupyter~=1.1.1",
+]
+lint = [
+    "ruff>=0.4.6",
+    "mypy~=1.18.2",
+    "codespell~=2.4.1",
+    "types-pyyaml~=6.0.12.20240917",
+    "types-requests~=2.32.4.20250913",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "C",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "UP", # pyupgrade
+    "RUF", # ruff specific rules
+]
+ignore = ["E501", "C901", "B006"] # ignore line too long, too complex
+
+[tool.ruff.lint.isort]
+known-first-party = ["product_info_agent"]
+
+[build-system]
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "-vv -s"
+testpaths = ["tests/"]
+log_level = "DEBUG"
+log_cli = true
+log_auto_indent = true
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.agent-starter-pack]
+example_question = "Analyze this product image for ecommerce suitability and generate marketing content"
+
+[tool.agent-starter-pack.settings]
+agent_directory = "."
