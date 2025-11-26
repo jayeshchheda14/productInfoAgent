@@ -229,7 +229,7 @@ Edit `policy.json` to customize scoring rules:
 
 The agent includes comprehensive logging for debugging:
 
-* Logs saved to `ProductInfoADKAgent/logs/agent_YYYYMMDD_HHMMSS.log`
+* Logs saved to `ProductInfoAgent/logs/agent_YYYYMMDD_HHMMSS.log`
 * `logs/latest.log` points to most recent log
 * Logs include:
   - **Image Loading**: File path, size, success/failure
@@ -267,10 +267,10 @@ The agent includes comprehensive logging for debugging:
 View logs:
 ```bash
 # Latest log
-type ProductInfoADKAgent\logs\latest.log
+type ProductInfoAgent\logs\latest.log
 
 # Tail logs in real-time
-tail -f ProductInfoADKAgent\logs\latest.log
+tail -f ProductInfoAgent\logs\latest.log
 ```
 
 ## Customization
