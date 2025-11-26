@@ -39,8 +39,24 @@ def score_product_image(tool_context: ToolContext) -> str:
         if logos:
             logger.debug(f"[SCORING] Logos: {[l['description'] for l in logos]}")
         
+        # Check SafeSearch first - immediate rejection for inappropriate content
+        safe_search = vision_result.get('safe_search', {})
+        if safe_search.get('adult') in ['LIKELY', 'VERY_LIKELY'] or \
+           safe_search.get('violence') in ['LIKELY', 'VERY_LIKELY'] or \
+           safe_search.get('racy') in ['VERY_LIKELY']:
+            rejection_reason = f"Inappropriate content detected: Adult={safe_search.get('adult')}, Violence={safe_search.get('violence')}, Racy={safe_search.get('racy')}"
+            logger.warning(f"[SCORING] {rejection_reason}")
+            error_result = {
+                'score': -100,
+                'gatekeeper_passed': False,
+                'rejection_reason': rejection_reason,
+                'safe_search': safe_search
+            }
+            tool_context.state["scoring_result"] = error_result
+            return f"🚫 Image REJECTED - {rejection_reason}"
+        
         # Basic image scoring
-        policy_score = _score_image_policy(image_data, policy)
+        policy_score = _score_image_policy(image_data, policy, vision_result)
         
         # Ecommerce validation
         ecommerce_validation = _validate_ecommerce_eligibility(vision_result, policy)
@@ -108,7 +124,7 @@ Required threshold: {policy_score.get('threshold', 45)}/50"""
         tool_context.state["scoring_result"] = error_result
         return f"❌ Scoring Error: {str(e)}"
 
-def _score_image_policy(image_data: str, policy: dict) -> dict:
+def _score_image_policy(image_data: str, policy: dict, vision_result: dict) -> dict:
     """Score image against policy rules"""
     try:
         image_bytes = base64.b64decode(image_data)
@@ -122,6 +138,23 @@ def _score_image_policy(image_data: str, policy: dict) -> dict:
         
         score = 0
         details = []
+        
+        # Apply product indicators from vision labels
+        labels = vision_result.get('labels', [])
+        logos = vision_result.get('logos', [])
+        product_indicators = policy['image_policy'].get('product_indicators', {})
+        
+        if logos and 'brand_logo' in product_indicators:
+            score += product_indicators['brand_logo']
+            details.append(f"Brand logo detected: +{product_indicators['brand_logo']} points")
+            logger.debug(f"[SCORING] +{product_indicators['brand_logo']} points: Brand logo (Total: {score})")
+        
+        packaging_keywords = ['package', 'packaging', 'bottle', 'can', 'box', 'container']
+        if any(any(kw in label['description'].lower() for kw in packaging_keywords) for label in labels):
+            if 'product_packaging' in product_indicators:
+                score += product_indicators['product_packaging']
+                details.append(f"Product packaging detected: +{product_indicators['product_packaging']} points")
+                logger.debug(f"[SCORING] +{product_indicators['product_packaging']} points: Product packaging (Total: {score})")
         
         # Score calculation with logging
         min_width = policy['image_policy']['technical_requirements']['min_width']

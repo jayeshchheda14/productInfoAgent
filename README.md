@@ -17,7 +17,7 @@ This agent enables users to validate product images and automatically generate m
 
 ## Agent Details
 
-The key features of the Product Info ADK Agent include:
+The key features of the Product Info Agent include:
 
 | Feature | Description |
 | --- | --- |
@@ -42,11 +42,12 @@ The key features of the Product Info ADK Agent include:
 
    ```bash
    # Clone this repository
-   cd MultiAgentPython/ProductInfoADKAgent
+   cd productInfoAgent
    # check if you have python installer
    py --version
    # Install dependencies
    py -m pip install -r requirements.txt
+
    ```
 
 3. **Configuration**
@@ -92,7 +93,7 @@ ADK provides convenient ways to interact with the agent locally. Example request
 Run the agent using CLI:
 
 ```bash
-adk run .\ProductInfoADKAgent\
+adk run .\ProductInfoAgent\
 ```
 
 **Using Python Scripts**
@@ -108,7 +109,7 @@ python interactive_runner.py
 
 ## Agent Workflow
 
-The Product Info ADK Agent implements the following sequential workflow:
+The Product Info  Agent implements the following sequential workflow:
 
 1. **Image Loading** - Loads image from file path or folder
    * Supports specific file paths or folder scanning

@@ -20,7 +20,7 @@ def analyze_with_vision_api(tool_context: ToolContext) -> str:
         image_bytes = base64.b64decode(image_data)
         image = vision.Image(content=image_bytes)
         
-        # Perform multiple types of detection
+        # Perform multiple types of detection including SafeSearch
         response = client.annotate_image({
             'image': image,
             'features': [
@@ -28,6 +28,7 @@ def analyze_with_vision_api(tool_context: ToolContext) -> str:
                 {'type_': vision.Feature.Type.TEXT_DETECTION, 'max_results': 10},
                 {'type_': vision.Feature.Type.LOGO_DETECTION, 'max_results': 10},
                 {'type_': vision.Feature.Type.OBJECT_LOCALIZATION, 'max_results': 10},
+                {'type_': vision.Feature.Type.SAFE_SEARCH_DETECTION},
             ],
         })
         
@@ -43,17 +44,27 @@ def analyze_with_vision_api(tool_context: ToolContext) -> str:
         objects = [{'name': obj.name, 'score': obj.score} 
                   for obj in response.localized_object_annotations]
         
+        # Extract SafeSearch results
+        safe = response.safe_search_annotation
+        safe_search = {
+            'adult': safe.adult.name,
+            'violence': safe.violence.name,
+            'racy': safe.racy.name
+        }
+        
         vision_result = {
             'labels': labels,
             'detected_text': detected_text,
             'logos': logos,
             'objects': objects,
+            'safe_search': safe_search,
             'analysis_complete': True
         }
         
         tool_context.state["vision_analysis_result"] = vision_result
         
         logger.info(f"[VISION_API] Success - labels: {len(labels)}, logos: {len(logos)}, text: {len(detected_text)} chars, objects: {len(objects)}")
+        logger.info(f"[VISION_API] SafeSearch - adult: {safe_search['adult']}, violence: {safe_search['violence']}, racy: {safe_search['racy']}")
         
         # Log all labels with scores
         logger.debug("[VISION_API] Labels detected:")
@@ -86,7 +97,8 @@ def analyze_with_vision_api(tool_context: ToolContext) -> str:
             summary += f"- Logos found: {', '.join(logo_names)}\n"
         if detected_text:
             summary += f"- Text detected: {len(detected_text)} characters\n"
-        summary += f"- Objects found: {len(objects)}"
+        summary += f"- Objects found: {len(objects)}\n"
+        summary += f"- SafeSearch: Adult={safe_search['adult']}, Violence={safe_search['violence']}, Racy={safe_search['racy']}"
         
         return summary
         

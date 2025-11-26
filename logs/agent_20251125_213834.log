@@ -1,0 +1,37 @@
+2025-11-25 21:38:34 | INFO     | ProductInfoAgent | Logging initialized: C:\AIAgent\productInfoAgent\logs\agent_20251125_213834.log
+2025-11-25 21:38:54 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Starting - path: C:\Image\temp.jpg
+2025-11-25 21:38:54 | DEBUG    | ProductInfoAgent | [LOAD_IMAGE] Resolved path: C:\Image\temp.jpg
+2025-11-25 21:38:54 | INFO     | ProductInfoAgent | [LOAD_IMAGE] Success - file: temp.jpg, size: 135832 bytes
+2025-11-25 21:38:55 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Starting mock scan
+2025-11-25 21:38:55 | DEBUG    | ProductInfoAgent | [VIRUS_SCAN] Mock scanning file: temp.jpg
+2025-11-25 21:38:55 | INFO     | ProductInfoAgent | [VIRUS_SCAN] Mock result - clean: True
+2025-11-25 21:38:56 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Starting upload to GCP for audit
+2025-11-25 21:38:56 | DEBUG    | ProductInfoAgent | [GCP_UPLOAD] Uploading file: temp.jpg
+2025-11-25 21:38:58 | INFO     | ProductInfoAgent | [GCP_UPLOAD] Success - uploaded to gs://product-audit-bucket/audit/temp.jpg
+2025-11-25 21:39:00 | INFO     | ProductInfoAgent | [VISION_API] Starting analysis
+2025-11-25 21:39:01 | INFO     | ProductInfoAgent | [VISION_API] Success - labels: 10, logos: 0, text: 17 chars, objects: 5
+2025-11-25 21:39:01 | INFO     | ProductInfoAgent | [VISION_API] SafeSearch - adult: UNLIKELY, violence: UNLIKELY, racy: VERY_LIKELY
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent | [VISION_API] Labels detected:
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Lingerie: 0.96
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Bra: 0.94
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Lingerie Top: 0.93
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Undergarment: 0.91
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Lace: 0.84
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Bikini: 0.79
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Active Undergarment: 0.78
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Swimsuit Top: 0.77
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Swimsuit: 0.75
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Model: 0.74
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent | [VISION_API] Detected text:
+Lingerie
+SHOP NOW
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent | [VISION_API] Objects detected:
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Brassiere: 0.93
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Person: 0.91
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Underpants: 0.59
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Swimwear: 0.57
+2025-11-25 21:39:01 | DEBUG    | ProductInfoAgent |   - Person: 0.53
+2025-11-25 21:39:02 | INFO     | ProductInfoAgent | [SCORING] Starting policy scoring
+2025-11-25 21:39:02 | DEBUG    | ProductInfoAgent | [SCORING] Using vision data - labels: 10, logos: 0, text length: 17
+2025-11-25 21:39:02 | DEBUG    | ProductInfoAgent | [SCORING] Top 3 labels: ['Lingerie', 'Bra', 'Lingerie Top']
+2025-11-25 21:39:02 | WARNING  | ProductInfoAgent | [SCORING] Inappropriate content detected: Adult=UNLIKELY, Violence=UNLIKELY, Racy=VERY_LIKELY

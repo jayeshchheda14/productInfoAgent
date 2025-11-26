@@ -1,24 +1,18 @@
 {
   "image_policy": {
     "product_indicators": {
-      "brand_logo": 15,
+      "brand_logo": 10,
       "product_packaging": 10,
-      "clear_product_focus": 10,
-      "professional_lighting": 5,
-      "clean_background": 5
+      "clear_product_focus": 5
     },
     "negative_indicators": {
-      "obscene_content": -50,
-      "violence": -30,
-      "inappropriate_text": -20,
-      "blurry_image": -10,
-      "multiple_unrelated_objects": -5
+      "adult_content": -100,
+      "violence": -100,
+      "racy_content": -50
     },
     "technical_requirements": {
-      "min_resolution": 300,
       "min_width": 200,
-      "min_height": 200,
-      "acceptable_formats": ["jpg", "jpeg", "png", "webp"]
+      "min_height": 200
     },
     "scoring": {
       "threshold": 45,
@@ -27,15 +21,7 @@
   },
   "ecommerce_policy": {
     "validation_rules": {
-      "min_product_confidence": 0.6,
-      "ai_classification_enabled": true,
-      "fallback_to_rules": true
-    },
-    "gatekeeper_rules": {
-      "min_score_to_proceed": 45,
-      "min_ecommerce_confidence": 0.7,
-      "required_checks": ["virus_scan", "policy_score", "ecommerce_validation"],
-      "stop_on_failure": true
+      "min_product_confidence": 0.6
     }
   }
 }
